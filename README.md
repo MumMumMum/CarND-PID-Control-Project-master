@@ -3,10 +3,10 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 
-Tuning Kp Ki Kd :
+Manual Tuning Kp Ki Kd :
 I took the code from repo and first ran the PID with some values for KP KI KD to check
 the project setup.
-I saw the value of CTE passed and returned.
+I saw the value of CTE passed to simulator  and returned from simultaor.
 I also noted that for CTE > 2.5  the car goes off Track.
 So first tested the reset command working, By sedning reset command after evey 100 messages.
 Then I took the rough values of Kp Ki and Kd from sebastins Lessons and checked how the cte is
@@ -22,13 +22,14 @@ Then followed these Instructions.
     Increase the D gain until the the oscillations go away (i.e. it's critically damped).
     Repeat steps 2 and 3 until increasing the D gain does not stop the oscillations.
 
-  Started with sebastins KP KI KD value increased Kp  until car is oscillation on tracke
+  Started with sebastins KP KI KD value increased Kp  until car is oscillation on track
   then increased Kd such we damp oscillations and then finally tried to make offset err to
   0 using Ki.
 
   I got Kp = 0.2;
         Ki = 0.004;
         Kd = 5.01;
+Self Tuning using Twiddle:
 
    Then I started Twiddle to tune more.
    What was tricky in twiddle was there could not be for loop and while in here
