@@ -23,7 +23,7 @@ void PID::Init(double _kp, double _ki, double _kd) {
     prev_err = 0.0;
     i_error = 0.0;
     msg_count = 0;
-    tune_param = true;
+    tune_param = false;
     reset_cmd  = false;
     //cte_tune = false;
     arr_param[0] = _kp;//kp
@@ -138,7 +138,7 @@ void PID::twiddle(double cte){
         minima_done = false;
     }
 
-    if(abs(total_err) < 0.02) {
+    if(abs(total_err) < 0.09) {
         tune_param = false;
         reset_cmd = false;
     }
